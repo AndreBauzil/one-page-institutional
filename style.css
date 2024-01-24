@@ -17,7 +17,7 @@ img {
 :root {
     --header-height: 4.5rem;
 
-    --hue: 159
+    --hue: 159; 
     /* HSL color mode */
     --base-color: hsl(var(--hue) 36% 57%);
     --base-color-second: hsl(var(--hue) 65% 88%);
@@ -40,7 +40,7 @@ body {
 h1 {
     font: 700 1.875rem 'Poppins', sans-serif;
     color: var(--title-color);
-    -webkit-font-smoothing: auto    ;
+    -webkit-font-smoothing: auto;
 }
 
 .button {
@@ -48,7 +48,7 @@ h1 {
     padding: 0 2rem;
     border-radius: 0.25rem;
 
-    background-color: var(--body-color);
+    background-color: var(--base-color);
     color: var(--text-color-light);
     font: 500 1rem 'DM Sans', sans-serif;
     
@@ -66,14 +66,13 @@ h1 {
     background: linear-gradient(
         270deg,
         hsla(var(--hue), 36%, 57%, 1) 0%,
-        hsla(var(--hue), 65%, 88%, 0.34) 100%,
+        hsla(var(--hue), 65%, 88%, 0.34) 100%
     );
 }
 
 /* LAYOUT */
 .container {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin: 0 1.5rem;
 }
 
 .grid {
@@ -117,7 +116,7 @@ nav {
 }
 
 main {
-    height: var(--header-height);
+    margin-top: var(--header-height);
 }
 
 /* HOME */
@@ -127,6 +126,10 @@ main {
 
 #home .container {
     margin: 0;
+}
+
+#home .image {
+    position: relative;
 }
 
 #home .image::before {
