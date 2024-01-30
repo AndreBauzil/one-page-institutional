@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Institutional OnePage</title>
-
-    <!-- STYLES -->
-    <link rel="stylesheet" href="style.css" />
-    
+   
     <!-- ICONS -->
     <link rel="stylesheet" href="assets/fonts/style.css" />
 
@@ -18,12 +15,15 @@
 
     <!-- SWIPER -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
+    
+    <!-- STYLES -->
+    <link rel="stylesheet" href="style.css" />
+    
 </head>
 <body>
     <header id="header" class="scroll">
         <nav class="container">
-            <a class="logo" href="#">beauty<span>salon.</span></a>
+            <a class="logo" href="/">beauty<span>salon</span>.</a>
             <!-- menu -->
             <div class="menu">
                 <ul class="grid">
@@ -189,10 +189,11 @@
                     <p>
                         Entre em contato com a Beautysalon, queremos tirar suas dúvidas, ouvri suas críticas e sugestões
                     </p>
-                    <a href="#" 
+                    <a href="https://api.whatsapp.com/send?phone=+55912345678&textOi! Gostaria de agendar um horário" 
                         class="button"
+                        target="_blank"
                     >
-                        <i class="icon-whatsapp"><i/> Entrar em contato
+                        <i class="icon-whatsapp"></i> Entrar em contato
                     </a>
                 </div>
 
@@ -205,12 +206,40 @@
                 </div>
             </div>
         </section>
+
+        <div class="divider-1"></div>
+    
+        
     </main>
 
-    <footer></footer>
-    
+    <footer class="section">
+        <div class="container grid">
+            <div class="brand">
+                <a href="#home" class="logo logo-alt">beauty<span>salon</span>.</a>
+                <p>@2024 Beautysalon.</p>
+                <p>Todos os direitos reservados.</p>
+            </div>
+            <div class="social">
+                <a href="https://instagram.com/" target="_blank">
+                    <i class="icon-instagram"></i>
+                </a>
+                <a href="https://fb.com/" target="_blank">
+                    <i class="icon-facebook"></i>
+                </a>
+                <a href="https://youtube.com/" target="_blank">
+                    <i class="icon-youtube"></i> 
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <a href="#home" class="back-to-top"><i class="icon-arrow-up"></i></a>
+
     <!-- SWIPER.JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- SCROLL-REVEAL -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <!-- MAIN -->
     <script src="main.js"></script>
 </body>
