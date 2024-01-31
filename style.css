@@ -97,7 +97,7 @@ body {
 }
 
 .section {
-    padding: 5rem 0;
+    padding: calc(5rem + var(--header-height)) 0;
 }
 .section .title {
     margin-bottom: 1rem;
@@ -127,9 +127,6 @@ body {
     opacity: 0.9;
 }
 
-main {
-    margin-top: calc(var(--header-height) + 2rem);
-}
 
 
 /* LOGO */
@@ -442,7 +439,10 @@ nav.show div.icon-close {
 /* FOOTER */
 footer {
     background: var(--base-color);
+}
 
+footer.section {
+    padding: 4rem 0;
 }
 
 footer .logo {
@@ -460,8 +460,12 @@ footer i {
     color: var(--text-color-light);
 }
 
+footer .social {
+    grid-auto-flow: column;
+    width: fit-content;
+}
+
 footer .social a {
-    margin-right: 2rem;
     transition: 0.3s;
     display: inline-block;
 }
@@ -495,4 +499,21 @@ footer .social a:hover {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
+}
+
+/* MEDIA QUERIES */
+@media ( min-width: 1200px ) {
+    main {
+        margin-top: var(--header-height);
+    }
+
+    .section {
+        padding: 10rem 0;
+    }
+}
+@media ( min-width: 992px ) {
+    :root {
+        --title-font-size: 2.25rem;
+        --subtitle-font-size: 1.125rem;
+    }
 }
