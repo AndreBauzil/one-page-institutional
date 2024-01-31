@@ -21,10 +21,8 @@ for (const link of links) {
 const header = document.querySelector('#header')
 const navHeight = header.offsetHeight
 
-window.addEventListener('scroll', () => {
-    window.scrollY >= navHeight ? header.classList.add('scroll') : header.classList.remove('scroll')
-})
-
+const changeHeaderOnScroll = () => window.scrollY >= navHeight ? header.classList.add('scroll') : header.classList.remove('scroll')
+    
 // Swiper: Testimonials' Slider 
 const swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
@@ -56,6 +54,9 @@ scrollReveal.reveal(
 
 // Button back to top
 const btnBackToTop = document.querySelector('.back-to-top')
+function functionBackToTop() { window.scrollY >= 560 ? btnBackToTop.classList.add('show') : btnBackToTop.classList.remove('show') }
+
 window.addEventListener('scroll', () => {
-    window.scrollY >= 560 ? btnBackToTop.classList.add('show') : btnBackToTop.classList.remove('show')
+    changeHeaderOnScroll()
+    functionBackToTop()
 })
