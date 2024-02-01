@@ -29,6 +29,13 @@ img {
     --text-color: hsl(0 0% 46%);
     --text-color-light: hsl(0 0% 98%);
     --body-color: hsl(0 0% 98%);
+
+    /* FONTS */
+    --title-font-size: 1.875rem;
+    --subtitle-font-size: 1rem;
+
+    --title-font: 'Poppins', sans-serif;
+    --body-font: 'DM Sans', sans-serif;
 }
 
 
@@ -38,14 +45,14 @@ html {
 }
 
 body {
-    font: 400 1rem 'DM Sans', sans-serif;
+    font: 400 1rem var(--body-font);
     color: var(--text-color);
     background: var(--body-color);
     -webkit-font-smoothing: antialiased;
 }
 
 .title {
-    font: 700 1.875rem 'Poppins', sans-serif;
+    font: 700 var(--title-font-size) var(--title-font);
     color: var(--title-color);
     -webkit-font-smoothing: auto;
 }
@@ -57,7 +64,7 @@ body {
 
     background-color: var(--base-color);
     color: var(--text-color-light);
-    font: 500 1rem 'DM Sans', sans-serif;
+    font: 500 1rem var(--body-font);
     
     display: inline-flex;
     align-items: center;
@@ -102,6 +109,10 @@ body {
 .section .title {
     margin-bottom: 1rem;
 }
+.section .subtitle {
+    font-size: var(--subtitle-font-size);
+}
+
 .section header {
     margin-bottom: 4rem;
 }
@@ -131,7 +142,7 @@ body {
 
 /* LOGO */
 .logo {
-    font: 700 1.31rem 'Poppins', sans-serif;
+    font: 700 1.31rem var(--title-font);
     color: var(--title-color);
 }
 .logo span {
@@ -365,7 +376,7 @@ nav.show div.icon-close {
 }
 #testimonials blockquote p {
     position: relative;
-    text-indent: 1.875rem;
+    text-indent: var(--title-font-size);
     margin-bottom: 1.5rem;
     color: var(--title-color);
 }
@@ -503,12 +514,46 @@ footer .social a:hover {
 
 /* MEDIA QUERIES */
 @media ( min-width: 1200px ) {
+    /* base */
     main {
         margin-top: var(--header-height);
     }
-
+    .container {
+        max-width: 1120px;
+        margin: 0 auto;
+    }
     .section {
         padding: 10rem 0;
+    }
+
+    /* nav */
+    nav .menu {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+    nav .menu ul {
+        display: flex;
+        gap: 2rem;
+    }
+    nav .menu ul li a {
+        font: 400 1rem var(--body-font);
+    }
+    nav .icon-menu {
+        display: none;
+    }
+
+    /* home */
+    #home .container {
+        grid-auto-flow: column;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+    #home .image {
+        order: 1;
+    }
+    #home .text {
+        order: 0;
     }
 }
 @media ( min-width: 992px ) {
