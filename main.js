@@ -5,6 +5,7 @@ const toggle = document.querySelectorAll('nav .toggle')
 for (const element of toggle) {
     element.addEventListener('click', () => {
         nav.classList.toggle('show')
+        header.classList.remove('scroll')
     })
 }
 
@@ -21,8 +22,8 @@ for (const link of links) {
 const header = document.querySelector('#header')
 const navHeight = header.offsetHeight
 
-const changeHeaderOnScroll = () => window.scrollY >= navHeight ? header.classList.add('scroll') : header.classList.remove('scroll')
-    
+const changeHeaderOnScroll = () => window.scrollY >= navHeight ? header.classList.add('scroll') : header.classList.remove('scroll') 
+
 // Swiper: Testimonials' Slider 
 const swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
@@ -56,6 +57,8 @@ scrollReveal.reveal(
 const btnBackToTop = document.querySelector('.back-to-top')
 function functionBackToTop() { window.scrollY >= 560 ? btnBackToTop.classList.add('show') : btnBackToTop.classList.remove('show') }
 
+
+// On scroll event listener
 window.addEventListener('scroll', () => {
     changeHeaderOnScroll()
     functionBackToTop()
