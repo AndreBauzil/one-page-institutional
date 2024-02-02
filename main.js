@@ -31,7 +31,14 @@ const swiper = new Swiper('.swiper-container', {
         el: '.swiper-pagination'
     },
     mousewheel: true,
-    keyboard: true
+    keyboard: true,
+
+    breakpoints: {
+        767: { 
+            slidesPerView: 2,
+            setWrapperSize: true
+        }
+    }
 });
 
 // Scroll Reveal: Show elements when scroll page
@@ -57,9 +64,28 @@ scrollReveal.reveal(
 const btnBackToTop = document.querySelector('.back-to-top')
 function functionBackToTop() { window.scrollY >= 560 ? btnBackToTop.classList.add('show') : btnBackToTop.classList.remove('show') }
 
+// Menu active on page section
+const sections = document.querySelectorAll('main section[id]')
+function activateMenuAtCurrentSection() {
+    const checkpoint = window.scrollY + (window.innerHeight / 8) * 4
+
+    for ( const section of sections ) {
+        const sectionTop = section.offsetTop
+        const sectionHeight = section.offsetHeight
+        const sectionId = section.getAttribute('id')
+
+        const checkpointStart = checkpoint >= sectionTop
+        const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+        document.querySelector('nav ul li a[href*=' + id + ']') + (checkpointStart && checkpointEnd ? classList.add('active') : classList.remove('active'))
+    }
+}
+
 
 // On scroll event listener
 window.addEventListener('scroll', () => {
     changeHeaderOnScroll()
     functionBackToTop()
+    activateMenuAtCurrentSection()
 })
+
