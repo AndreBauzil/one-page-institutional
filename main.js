@@ -77,7 +77,10 @@ function activateMenuAtCurrentSection() {
         const checkpointStart = checkpoint >= sectionTop
         const checkpointEnd = checkpoint <= sectionTop + sectionHeight
 
-        document.querySelector('nav ul li a[href*=' + id + ']') + (checkpointStart && checkpointEnd ? classList.add('active') : classList.remove('active'))
+        const linkActive = document.querySelector('nav ul li a[href*=' + sectionId + ']')
+        
+        if (checkpointStart && checkpointEnd) linkActive.classList.add('active')
+         else linkActive.classList.remove('active')
     }
 }
 
